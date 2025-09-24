@@ -3,7 +3,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { User, Activity, Dumbbell, LogOut, Home, PlayCircle } from 'lucide-react';
-import './Navbar.css';
+import './NavBar.css';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
