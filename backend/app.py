@@ -14,15 +14,26 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'your-secret-key-here'
 
 # Initialize database
-db = SQLAlchemy(app)
-
-# Create database tables first
-with app.app_context():
-    db.create_all()
+from database import db
+db.init_app(app)
 
 # Import routes after app context is set
 try:
-    from routes import *
+    from routes import auth_bp, workout_bp, exercise_bp, template_bp
+
+    # Register blueprints
+    app.register_blueprint(auth_bp, url_prefix='/api/auth')
+    app.register_blueprint(workout_bp, url_prefix='/api/workouts')
+    app.register_blueprint(exercise_bp, url_prefix='/api/exercises')
+    app.register_blueprint(template_bp, url_prefix='/api/templates')
+
+    # Import models to ensure they are registered with SQLAlchemy
+    from models import *
+
+    # Create database tables first
+    with app.app_context():
+        db.create_all()
+
 except ImportError:
     print("⚠️  Routes not found, continuing with basic setup")
 

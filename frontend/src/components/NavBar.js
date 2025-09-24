@@ -32,7 +32,7 @@ const Navbar = () => {
               <Dumbbell size={18} />
               <span>Workouts</span>
             </Link>
-            <Link to="/templates" className="navbar-item">
+            <Link to="/workout-templates" className="navbar-item">
               <PlayCircle size={18} />
               <span>Templates</span>
             </Link>
