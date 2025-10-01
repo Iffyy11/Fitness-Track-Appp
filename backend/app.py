@@ -30,7 +30,7 @@ try:
     # Import models to ensure they are registered with SQLAlchemy
     from models import *
 
-    # Create database tables first
+    # Create database tables
     with app.app_context():
         db.create_all()
 
@@ -50,12 +50,4 @@ def health_check():
     return jsonify({'status': 'healthy', 'service': 'fitness-tracker-api'})
 
 if __name__ == '__main__':
-    import os
-    port = int(os.environ.get('PORT', 5000))
-    debug_mode = os.environ.get('FLASK_ENV') != 'production'
-    
-    print("🚀 Starting Fitness Tracker Backend...")
-    print(f"📍 Server running on port: {port}")
-    print("🔗 API Health: /api/health")
-    
-    app.run(debug=debug_mode, host='0.0.0.0', port=port)
+    app.run(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
