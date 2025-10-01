@@ -50,7 +50,12 @@ def health_check():
     return jsonify({'status': 'healthy', 'service': 'fitness-tracker-api'})
 
 if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    debug_mode = os.environ.get('FLASK_ENV') != 'production'
+    
     print("🚀 Starting Fitness Tracker Backend...")
-    print("📍 Server running at: http://localhost:5000")
-    print("🔗 API Health: http://localhost:5000/api/health")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    print(f"📍 Server running on port: {port}")
+    print("🔗 API Health: /api/health")
+    
+    app.run(debug=debug_mode, host='0.0.0.0', port=port)
