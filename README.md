@@ -1,8 +1,8 @@
-# 🏋️‍♂️ Fitness Tracker
+ Fitness Tracker
 
 A full-stack fitness tracking application built with React (TypeScript) frontend and Flask backend.
 
-## Features
+Features
 
 - Track workouts with details like duration, calories burned, and workout type
 - Add new workouts through an intuitive web interface
@@ -10,7 +10,7 @@ A full-stack fitness tracking application built with React (TypeScript) frontend
 - Delete workouts you no longer need
 - REST API for workout management
 
-## Project Structure
+Project Structure
 
 ```
 fitness-tracker/
@@ -28,9 +28,9 @@ fitness-tracker/
 └── README.md             # This file
 ```
 
-## Setup Instructions
+Setup Instructions
 
-### Backend Setup
+ Backend Setup
 
 1. Navigate to the backend directory:
    ```bash
@@ -55,7 +55,7 @@ fitness-tracker/
 
 The backend server will run on `http://localhost:5000`
 
-### Frontend Setup
+Frontend Setup
 
 1. Navigate to the frontend directory:
    ```bash
@@ -74,7 +74,7 @@ The backend server will run on `http://localhost:5000`
 
 The frontend will run on `http://localhost:3000`
 
-## API Endpoints
+API Endpoints
 
 - `GET /api/health` - Health check
 - `GET /api/workouts` - Get all workouts
@@ -82,20 +82,20 @@ The frontend will run on `http://localhost:3000`
 - `GET /api/workouts/<id>` - Get a specific workout
 - `DELETE /api/workouts/<id>` - Delete a workout
 
-## Technologies Used
+Technologies Used
 
-### Backend
+Backend
 - **Flask** - Python web framework
 - **Flask-CORS** - Cross-Origin Resource Sharing
 - **python-dotenv** - Environment variable management
 
-### Frontend
+Frontend
 - **React** - User interface library
 - **TypeScript** - Type-safe JavaScript
 - **Axios** - HTTP client for API calls
 - **CSS3** - Styling
 
-## Development
+Development
 
 To run both frontend and backend simultaneously:
 
@@ -103,14 +103,10 @@ To run both frontend and backend simultaneously:
 2. Start the frontend development server (port 3000)
 3. The frontend will proxy API requests to the backend
 
-## Contributing
+Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
