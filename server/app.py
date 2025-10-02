@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Configure CORS
-CORS(app, origins=["https://fitness-tracke-app-1-2sbj.onrender.com"])
+CORS(app, resources={r"/api/*": {"origins": "https://fitness-tracke-app-1-2sbj.onrender.com"}})
 
 # Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fitness_tracker.db'
@@ -22,7 +22,7 @@ try:
     from routes import auth_bp, workout_bp, exercise_bp, template_bp
 
     # Register blueprints
-    app.register_blueprint(auth_bp, url_prefix='/api/auth')
+    app.register_blueprint(auth_bp, url_prefix='/api/auth/register')
     app.register_blueprint(workout_bp, url_prefix='/api/workouts')
     app.register_blueprint(exercise_bp, url_prefix='/api/exercises')
     app.register_blueprint(template_bp, url_prefix='/api/templates')
