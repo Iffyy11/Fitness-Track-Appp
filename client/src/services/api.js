@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://fitness-tracke-app-qthd.onrender.com';
+const BASE_URL = 'https://fitness-tracke-app-qthd.onrender.com/api';
 
 const api = axios.create({
   baseURL: BASE_URL,
