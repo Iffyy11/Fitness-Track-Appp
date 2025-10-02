@@ -34,7 +34,8 @@ try:
         db.create_all()
 
 except ImportError as e:
-    print(f"⚠️ Routes not found: {e}. Continuing with basic setup.")
+    print(f"⚠️  Failed to import routes: {e}")
+    raise
 
 # Health check route
 @app.route('/')
