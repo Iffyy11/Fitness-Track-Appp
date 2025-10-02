@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Configure CORS
-CORS(app, origins=["https://your-frontend.onrender.com"])
+CORS(app, origins=["https://fitness-tracke-app-qthd.onrender.com/"])
 
 # Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fitness_tracker.db'
